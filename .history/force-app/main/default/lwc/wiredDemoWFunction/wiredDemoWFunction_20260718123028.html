@@ -1,0 +1,23 @@
+<template>
+    <lightning-card title="Hot Accounts (Using @wire Function)">
+        <div class="slds-p-around_medium">
+
+            <!-- Display Accounts -->
+            <template if:true={accounts}>
+                <template for:each={accounts} for:item="acc">
+                    <p key={acc.Id}>
+                        <strong>{acc.Name}</strong> - {acc.Industry}
+                    </p>
+                </template>
+            </template>
+
+            <!-- Display Error -->
+            <template if:true={error}>
+                <p class="slds-text-color_error">
+                    Error loading accounts.
+                </p>
+            </template>
+
+        </div>
+    </lightning-card>
+</template>

@@ -1,0 +1,10 @@
+<template>
+    <lightning-card title="Wire Demo with Method">
+        <div class="slds-box">
+            <template if:true={accounts.data}>
+                <template for:each={accounts.data} for:item="acc">
+                    <p key={acc.Id}>{acc.Name}</p>
+                </template>
+            </template>
+        </div </lightning-card>
+</template>

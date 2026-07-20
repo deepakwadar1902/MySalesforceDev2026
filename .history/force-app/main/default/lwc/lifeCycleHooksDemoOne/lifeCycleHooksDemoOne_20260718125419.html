@@ -1,0 +1,27 @@
+<template>
+    <lightning-card title="Lifecycle Hook Demo">
+        <div class="slds-p-around_medium">
+            <p>
+                <strong>Counter Value :</strong>{counter}
+            </p>
+        </div>
+    </lightning-card>
+    <lightning-card title="ConnectedCallback Demo">
+
+        <template if:true={accounts}>
+            <template for:each={accounts} for:item="acc">
+                <div key={acc.Id} class="slds-p-around_small">
+                    <p><strong>{acc.Name}</strong></p>
+                    <p>{acc.Industry}</p>
+                </div>
+            </template>
+        </template>
+
+        <template if:true={error}>
+            <p class="slds-text-color_error">
+                Error loading accounts.
+            </p>
+        </template>
+
+    </lightning-card>
+</template>
